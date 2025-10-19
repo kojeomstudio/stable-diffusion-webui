@@ -51,6 +51,9 @@ then
   python_cmd="python3"
 fi
 
+# logging python cmd
+echo python cmd: ${python_cmd}
+
 # git executable
 if [[ -z "${GIT}" ]]
 then
@@ -117,10 +120,22 @@ then
     exit 1
 fi
 
-if [[ -d "$SCRIPT_DIR/.git" ]]
-then
+# 서브모듈로 실행시에 자동으로 클로닝을 하고 있음.
+# 이에 대한 예외처리 추가에 따라 주석처리
+#if [[ -d "$SCRIPT_DIR/.git" ]]
+#then
+#    printf "\n%s\n" "${delimiter}"
+#    printf "Repo already cloned, using it as install directory"
+#    printf "\n%s\n" "${delimiter}"
+#    install_dir="${SCRIPT_DIR}/../"
+#    clone_dir="${SCRIPT_DIR##*/}"
+#fi
+
+# treat git work-tree or .git file as already-cloned (submodules/vendor trees)
+if git -C "$SCRIPT_DIR" rev-parse --is-inside-work-tree >/dev/null 2>&1 || \
+   [[ -d "$SCRIPT_DIR/.git" ]] || [[ -f "$SCRIPT_DIR/.git" ]]; then
     printf "\n%s\n" "${delimiter}"
-    printf "Repo already cloned, using it as install directory"
+    printf "Repo already present (git work-tree detected); using current directory"
     printf "\n%s\n" "${delimiter}"
     install_dir="${SCRIPT_DIR}/../"
     clone_dir="${SCRIPT_DIR##*/}"
