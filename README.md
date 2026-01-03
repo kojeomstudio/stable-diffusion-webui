@@ -3,21 +3,25 @@ A web interface for Stable Diffusion, implemented using Gradio library.
 
 ![](screenshot.png)
 
-## Customs(by kojeomstudio)
+## Customs
 - 기존 stable_diffusion_repo = os.environ.get('STABLE_DIFFUSION_REPO', "https://github.com/Stability-AI/stablediffusion.git") repo의 경우 페이지가 삭제되었다.
 - 환경 디펜던시 repo들의 경우 페이지가 삭제 및 누락되는 이슈가 있음.
-    - 아래 env repo의 경우 향후 문제를 대비해서 생성한 repo. (launch_utils.py)
+    - 아래 env repo의 경우 향후 문제를 대비해서 생성한 repo. (launch_utils.py 참조)
         - assets_repo = os.environ.get('ASSETS_REPO', "https://github.com/kojeomstudio/stable-diffusion-webui-assets.git")
-        - stable_diffusion_repo = os.environ.get('STABLE_DIFFUSION_REPO', "https://github.com/kojeomstudio/stable-diffusion.git")
+        - stable_diffusion_repo = os.environ.get('STABLE_DIFFUSION_REPO', "https://github.com/kojeomstudio/stable-diffusion-v2.git")
         - stable_diffusion_xl_repo = os.environ.get('STABLE_DIFFUSION_XL_REPO', "https://github.com/kojeomstudio/generative-models.git")
         - k_diffusion_repo = os.environ.get('K_DIFFUSION_REPO', 'https://github.com/kojeomstudio/k-diffusion.git')
         - blip_repo = os.environ.get('BLIP_REPO', 'https://github.com/kojeomstudio/BLIP.git')
 - archive 폴더아래에 clip, openclip 2개 패키지 아카이브.
+
+## Forked Repos
 - https://github.com/kojeomstudio/stable-diffusion-webui-assets.git
-- https://github.com/kojeomstudio/stable-diffusion.git
+- https://github.com/kojeomstudio/stable-diffusion.git (v1)
+- https://github.com/kojeomstudio/stable-diffusion-v2.git (v2)
 - https://github.com/kojeomstudio/generative-models.git
 - https://github.com/kojeomstudio/k-diffusion.git
 - https://github.com/kojeomstudio/BLIP.git
+- https://github.com/kojeomstudio/taming-transformers.git
 
 ## Features
 [Detailed feature showcase with images](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features):

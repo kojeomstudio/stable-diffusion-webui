@@ -357,7 +357,8 @@ def prepare_environment():
     #if kojeomstudio
     # replace kojeomstudio repo.
     assets_repo = os.environ.get('ASSETS_REPO', "https://github.com/kojeomstudio/stable-diffusion-webui-assets.git")
-    stable_diffusion_repo = os.environ.get('STABLE_DIFFUSION_REPO', "https://github.com/kojeomstudio/stable-diffusion.git")
+    # v1이 아닌 v2 모델로 세팅해야함.
+    stable_diffusion_repo = os.environ.get('STABLE_DIFFUSION_REPO', "https://github.com/kojeomstudio/stable-diffusion-v2.git")
     stable_diffusion_xl_repo = os.environ.get('STABLE_DIFFUSION_XL_REPO', "https://github.com/kojeomstudio/generative-models.git")
     k_diffusion_repo = os.environ.get('K_DIFFUSION_REPO', 'https://github.com/kojeomstudio/k-diffusion.git')
     blip_repo = os.environ.get('BLIP_REPO', 'https://github.com/kojeomstudio/BLIP.git')
@@ -368,8 +369,8 @@ def prepare_environment():
     #stable_diffusion_commit_hash = os.environ.get('STABLE_DIFFUSION_COMMIT_HASH', "cf1d67a6fd5ea1aa600c4df58e5b47da45f6bdbf")
 
     #if kojeomstudio
-    # fork repo(https://github.com/kojeomstudio/stable-diffusion.git)의 최근 커밋 해시로 수정.( --> 21f890f9da3cfbeaba8e2ac3c425ee9e998d5229 )
-    stable_diffusion_commit_hash = os.environ.get('STABLE_DIFFUSION_COMMIT_HASH', "21f890f9da3cfbeaba8e2ac3c425ee9e998d5229")
+    # fork repo(https://github.com/kojeomstudio/stable-diffusion-v2.git)의 최근 커밋 해시로 수정.( --> 47b6b607fdd31875c9279cd2f4f16b92e4ea958e )
+    stable_diffusion_commit_hash = os.environ.get('STABLE_DIFFUSION_COMMIT_HASH', "47b6b607fdd31875c9279cd2f4f16b92e4ea958e")
     #endif ~kojeomstudio
 
     stable_diffusion_xl_commit_hash = os.environ.get('STABLE_DIFFUSION_XL_COMMIT_HASH', "45c443b316737a4ab6e40413d7794a7f5657c19f")
