@@ -369,8 +369,8 @@ def prepare_environment():
     #stable_diffusion_commit_hash = os.environ.get('STABLE_DIFFUSION_COMMIT_HASH', "cf1d67a6fd5ea1aa600c4df58e5b47da45f6bdbf")
 
     #if kojeomstudio
-    # fork repo(https://github.com/kojeomstudio/stable-diffusion-v2.git)의 최근 커밋 해시로 수정.( --> 47b6b607fdd31875c9279cd2f4f16b92e4ea958e )
-    stable_diffusion_commit_hash = os.environ.get('STABLE_DIFFUSION_COMMIT_HASH', "47b6b607fdd31875c9279cd2f4f16b92e4ea958e")
+    # fork repo(https://github.com/kojeomstudio/stable-diffusion-v2.git)의 최근 커밋 해시로 수정.
+    stable_diffusion_commit_hash = os.environ.get('STABLE_DIFFUSION_COMMIT_HASH', "ef2b0ce8fb8265e940d509964dfdc0631b74b21a")
     #endif ~kojeomstudio
 
     stable_diffusion_xl_commit_hash = os.environ.get('STABLE_DIFFUSION_XL_COMMIT_HASH', "45c443b316737a4ab6e40413d7794a7f5657c19f")
