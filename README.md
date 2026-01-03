@@ -3,6 +3,17 @@ A web interface for Stable Diffusion, implemented using Gradio library.
 
 ![](screenshot.png)
 
+## Customs
+- 기존 stable_diffusion_repo = os.environ.get('STABLE_DIFFUSION_REPO', "https://github.com/Stability-AI/stablediffusion.git") repo의 경우 페이지가 삭제되었다.
+- 환경 디펜던시 repo들의 경우 페이지가 삭제 및 누락되는 이슈가 있음.
+    - 아래 env repo의 경우 향후 문제를 대비해서 생성한 repo. (launch_utils.py)
+        - assets_repo = os.environ.get('ASSETS_REPO', "https://github.com/kojeomstudio/stable-diffusion-webui-assets.git")
+        - stable_diffusion_repo = os.environ.get('STABLE_DIFFUSION_REPO', "https://github.com/kojeomstudio/stable-diffusion.git")
+        - stable_diffusion_xl_repo = os.environ.get('STABLE_DIFFUSION_XL_REPO', "https://github.com/kojeomstudio/generative-models.git")
+        - k_diffusion_repo = os.environ.get('K_DIFFUSION_REPO', 'https://github.com/kojeomstudio/k-diffusion.git')
+        - blip_repo = os.environ.get('BLIP_REPO', 'https://github.com/kojeomstudio/BLIP.git')
+- archive 폴더아래에 clip, openclip 2개 패키지를 아카이브 했다. (향후 삭제될지 모르므로..)
+
 ## Features
 [Detailed feature showcase with images](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features):
 - Original txt2img and img2img modes
