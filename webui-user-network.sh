@@ -25,11 +25,17 @@ echo "[INFO] Using python_cmd=$python_cmd"
 # 3) macOS MPS(Apple GPU) 폴백 허용
 export PYTORCH_ENABLE_MPS_FALLBACK=1
 
-# 4) 실행 옵션 (macOS 기본 안정 구성)
+# 4) Mark as already sourced to prevent double sourcing
+export WEBUI_USER_SOURCED=1
+
+# 5) 실행 옵션 (macOS 기본 안정 구성)
 #  - --no-half: MPS에서 FP16 이슈 회피 (필요 없으면 제거 가능)
 #  - --opt-sdp-attention: 메모리 효율 어텐션
 #  - --api: API 사용
 #  - --listen: 내부 네트워크 오픈.
 export COMMANDLINE_ARGS="--listen --skip-torch-cuda-test"
+
+# 6) webui.sh 실행
+exec bash "$(dirname "$0")/webui.sh" "$@"
 
 # ===============================================

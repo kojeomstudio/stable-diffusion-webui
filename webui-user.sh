@@ -25,13 +25,17 @@ echo "[INFO] Using python_cmd=$python_cmd"
 # 3) macOS MPS(Apple GPU) 폴백 허용
 export PYTORCH_ENABLE_MPS_FALLBACK=1
 
-# 4) 실행 옵션 (macOS 기본 안정 구성)
+# 4) Mark as already sourced to prevent double sourcing
+export WEBUI_USER_SOURCED=1
+
+# 5) 실행 옵션 (macOS 기본 안정 구성)
 #  - --no-half: MPS에서 FP16 이슈 회피 (필요 없으면 제거 가능)
 #  - --opt-sdp-attention: 메모리 효율 어텐션
 #  - --api: API 사용
 export COMMANDLINE_ARGS="--api --skip-torch-cuda-test"
 
-# 5) (선택) Torch 버전 고정 (보통 자동 설치되므로 주석 유지)
+# 6) (선택) Torch 버전 고정 (보통 자동 설치되므로 주석 유지)
 # export TORCH_COMMAND="pip install torch==2.3.1 torchvision==0.18.1"
 
-# ===============================================
+# 7) webui.sh 실행
+exec bash "$(dirname "$0")/webui.sh" "$@"

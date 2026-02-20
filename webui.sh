@@ -15,9 +15,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     fi
 fi
 
-# Read variables from webui-user.sh
+# Read variables from webui-user.sh (only if not already sourced)
 # shellcheck source=/dev/null
-if [[ -f "$SCRIPT_DIR"/webui-user.sh ]]
+if [[ -f "$SCRIPT_DIR"/webui-user.sh ]] && [[ -z "$WEBUI_USER_SOURCED" ]]
 then
     source "$SCRIPT_DIR"/webui-user.sh
 fi
