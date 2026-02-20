@@ -33,7 +33,7 @@ export WEBUI_USER_SOURCED=1
 #  - --opt-sdp-attention: 메모리 효율 어텐션
 #  - --api: API 사용
 #  - --listen: 내부 네트워크 오픈.
-export COMMANDLINE_ARGS="--listen --skip-torch-cuda-test"
+export COMMANDLINE_ARGS="--listen --skip-torch-cuda-test --upcast-sampling --no-half-vae --use-cpu interrogate"
 
 # 6) webui.sh 실행
 exec "$(dirname "$0")/webui.sh" "$@"
