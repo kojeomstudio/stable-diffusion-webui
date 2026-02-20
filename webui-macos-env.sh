@@ -5,7 +5,10 @@
 ####################################################################
 
 export install_dir="$HOME"
-export COMMANDLINE_ARGS="--skip-torch-cuda-test --upcast-sampling --no-half-vae --use-cpu interrogate"
+# Only set COMMANDLINE_ARGS if not already set by webui-user.sh
+if [[ -z "${COMMANDLINE_ARGS}" ]]; then
+    export COMMANDLINE_ARGS="--skip-torch-cuda-test --upcast-sampling --no-half-vae --use-cpu interrogate"
+fi
 export PYTORCH_ENABLE_MPS_FALLBACK=1
 
 if [[ "$(sysctl -n machdep.cpu.brand_string)" =~ ^.*"Intel".*$ ]]; then

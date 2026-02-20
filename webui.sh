@@ -7,19 +7,19 @@
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 
-# If run from macOS, load defaults from webui-macos-env.sh
+# Read variables from webui-user.sh first (user config overrides defaults)
+# shellcheck source=/dev/null
+if [[ -f "$SCRIPT_DIR"/webui-user.sh ]] && [[ -z "$WEBUI_USER_SOURCED" ]]
+then
+    source "$SCRIPT_DIR"/webui-user.sh
+fi
+
+# If run from macOS, load defaults from webui-macos-env.sh (only if not already set)
 if [[ "$OSTYPE" == "darwin"* ]]; then
     if [[ -f "$SCRIPT_DIR"/webui-macos-env.sh ]]
         then
         source "$SCRIPT_DIR"/webui-macos-env.sh
     fi
-fi
-
-# Read variables from webui-user.sh (only if not already sourced)
-# shellcheck source=/dev/null
-if [[ -f "$SCRIPT_DIR"/webui-user.sh ]] && [[ -z "$WEBUI_USER_SOURCED" ]]
-then
-    source "$SCRIPT_DIR"/webui-user.sh
 fi
 
 # If $venv_dir is "-", then disable venv support
