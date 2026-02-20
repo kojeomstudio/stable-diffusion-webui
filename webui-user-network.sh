@@ -36,6 +36,6 @@ export WEBUI_USER_SOURCED=1
 export COMMANDLINE_ARGS="--listen --skip-torch-cuda-test"
 
 # 6) webui.sh 실행
-exec bash "$(dirname "$0")/webui.sh" "$@"
+exec "$(dirname "$0")/webui.sh" "$@"
 
 # ===============================================

@@ -38,4 +38,4 @@ export COMMANDLINE_ARGS="--api --skip-torch-cuda-test"
 # export TORCH_COMMAND="pip install torch==2.3.1 torchvision==0.18.1"
 
 # 7) webui.sh 실행
-exec bash "$(dirname "$0")/webui.sh" "$@"
+exec "$(dirname "$0")/webui.sh" "$@"
