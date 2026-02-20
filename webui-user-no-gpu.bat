@@ -1,7 +1,7 @@
 @echo off
 
 REM C:\Users\[username]\AppData\Local\Programs\Python\Python310\python.exe
-set PYTHON=C:\Users\kojeo\AppData\Local\Programs\Python\Python310\python.exe
+set PYTHON=
 set GIT=
 set VENV_DIR=
 

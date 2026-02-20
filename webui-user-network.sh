@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ===============================================
-# macOS (Apple Silicon)용 webui-user.sh (강제 3.10)
+# macOS (Apple Silicon)용 webui-user-network.sh (강제 3.10)
 #  - pyenv 3.10.13만 허용
 #  - 시스템 python3(=3.13)로는 절대 폴백하지 않음
 # ===============================================
@@ -29,9 +29,7 @@ export PYTORCH_ENABLE_MPS_FALLBACK=1
 #  - --no-half: MPS에서 FP16 이슈 회피 (필요 없으면 제거 가능)
 #  - --opt-sdp-attention: 메모리 효율 어텐션
 #  - --api: API 사용
-export COMMANDLINE_ARGS="--api --skip-torch-cuda-test"
-
-# 5) (선택) Torch 버전 고정 (보통 자동 설치되므로 주석 유지)
-# export TORCH_COMMAND="pip install torch==2.3.1 torchvision==0.18.1"
+#  - --listen: 내부 네트워크 오픈.
+export COMMANDLINE_ARGS="--listen --skip-torch-cuda-test"
 
 # ===============================================
