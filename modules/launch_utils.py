@@ -343,8 +343,13 @@ def prepare_environment():
 
     xformers_package = os.environ.get('XFORMERS_PACKAGE', 'xformers==0.0.23.post1')
     # clip_package 및 openclip_package의 경우 archive 폴더 아래에 있음.
-    clip_package = os.environ.get('CLIP_PACKAGE', "https://github.com/openai/CLIP/archive/d50d76daa670286dd6cacf3bcd80b5e4823fc8e1.zip")
-    openclip_package = os.environ.get('OPENCLIP_PACKAGE', "https://github.com/mlfoundations/open_clip/archive/bb6e834e9c70d9c27d0dc3ecedeebeaeb1ffad6b.zip")
+    # clip_package = os.environ.get('CLIP_PACKAGE', "https://github.com/openai/CLIP/archive/d50d76daa670286dd6cacf3bcd80b5e4823fc8e1.zip")
+    # openclip_package = os.environ.get('OPENCLIP_PACKAGE', "https://github.com/mlfoundations/open_clip/archive/bb6e834e9c70d9c27d0dc3ecedeebeaeb1ffad6b.zip")
+
+#if kojeomstudio
+    clip_package = os.environ.get('CLIP_PACKAGE', "https://github.com/kojeomstudio/stable-diffusion-webui/blob/master/archive/CLIP-d50d76daa670286dd6cacf3bcd80b5e4823fc8e1.zip")
+    openclip_package = os.environ.get('OPENCLIP_PACKAGE', "https://github.com/kojeomstudio/stable-diffusion-webui/blob/master/archive/open_clip-bb6e834e9c70d9c27d0dc3ecedeebeaeb1ffad6b")
+#endif ~kojeomstudio
 
     # original repo.
     # stable_diffusion_repo -> Stability-AI 리포지터리에 없음. (다른 repo에 있다.)

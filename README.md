@@ -22,6 +22,8 @@ A web interface for Stable Diffusion, implemented using Gradio library.
 - https://github.com/kojeomstudio/k-diffusion.git
 - https://github.com/kojeomstudio/BLIP.git
 - https://github.com/kojeomstudio/taming-transformers.git
+- https://github.com/kojeomstudio/CLIP
+- https://github.com/kojeomstudio/open_clip
 
 ## Features
 [Detailed feature showcase with images](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features):
