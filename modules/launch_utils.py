@@ -347,8 +347,8 @@ def prepare_environment():
     # openclip_package = os.environ.get('OPENCLIP_PACKAGE', "https://github.com/mlfoundations/open_clip/archive/bb6e834e9c70d9c27d0dc3ecedeebeaeb1ffad6b.zip")
 
 #if kojeomstudio
-    clip_package = os.environ.get('CLIP_PACKAGE', "https://github.com/kojeomstudio/stable-diffusion-webui/blob/master/archive/CLIP-d50d76daa670286dd6cacf3bcd80b5e4823fc8e1.zip")
-    openclip_package = os.environ.get('OPENCLIP_PACKAGE', "https://github.com/kojeomstudio/stable-diffusion-webui/blob/master/archive/open_clip-bb6e834e9c70d9c27d0dc3ecedeebeaeb1ffad6b")
+    clip_package = os.environ.get('CLIP_PACKAGE', "https://github.com/kojeomstudio/stable-diffusion-webui/raw/refs/heads/master/archive/CLIP-d50d76daa670286dd6cacf3bcd80b5e4823fc8e1.zip")
+    openclip_package = os.environ.get('OPENCLIP_PACKAGE', "https://github.com/kojeomstudio/stable-diffusion-webui/raw/refs/heads/master/archive/open_clip-bb6e834e9c70d9c27d0dc3ecedeebeaeb1ffad6b.zip")
 #endif ~kojeomstudio
 
     # original repo.
