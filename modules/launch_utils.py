@@ -416,11 +416,12 @@ def prepare_environment():
     startup_timer.record("torch GPU test")
 
     if not is_installed("clip"):
-        run_pip(f"install \"setuptools<70.0.0\"", "setuptools downgrade for clip")
+        run_pip(f"install \"setuptools<70.0.0\" wheel", "setuptools and wheel for clip")
         run_pip(f"install {clip_package} --no-build-isolation", "clip")
         startup_timer.record("install clip")
 
     if not is_installed("open_clip"):
+        run_pip(f"install \"setuptools<70.0.0\" wheel", "setuptools and wheel for open_clip")
         run_pip(f"install {openclip_package} --no-build-isolation", "open_clip")
         startup_timer.record("install open_clip")
 
