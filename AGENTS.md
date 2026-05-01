@@ -1,10 +1,20 @@
 # AGENTS.md — Stable Diffusion WebUI
 
-Guidance for agentic coding agents working in this repository (AUTOMATIC1111/stable-diffusion-webui).
+Guidance for agentic coding agents working in this repository (kojeomstudio fork of AUTOMATIC1111/stable-diffusion-webui).
 
 ## Project Overview
 
 A browser-based frontend for Stable Diffusion image generation. Python backend (Gradio + FastAPI), JavaScript frontend. Primary language: Python 3.10.
+
+This is a fork with modified dependency URLs pointing to `kojeomstudio/` GitHub repos (see `modules/launch_utils.py`). Some original upstream repos have been deleted or archived.
+
+## Security — DO NOT
+
+- **NEVER commit** files in `.gitignore`: `config.json`, `ui-config.json`, `models/`, `outputs/`, `embeddings/`, `styles.csv`, `*.ckpt`, `*.safetensors`, `*.pth`, `venv/`.
+- **NEVER expose** secrets, API keys, tokens, or credentials in code or comments.
+- **NEVER read or log** contents of `config.json`, `ui-config.json`, or user data in `outputs/`.
+- **NEVER modify** `.gitignore` to allow tracking of model weights or user config files.
+- Do not install packages directly from PyPI for packages that are managed by `launch_utils.py` (torch, clip, open_clip, xformers).
 
 ## Build / Lint / Test Commands
 
@@ -198,3 +208,5 @@ Exceptions are recorded to `exception_records` (capped at 5). For API endpoints,
 6. **Branch conventions**: PRs should target `dev`, not `master`. The CI warns about PRs targeting `master`.
 
 7. **Dependencies**: Install via `launch.py` (handles PyTorch + all deps). Do not install directly from `requirements.txt` unless you understand the torch index URL requirements.
+
+8. **Forked repositories**: Dependency repos point to `kojeomstudio/` forks (see `modules/launch_utils.py`). CLIP and OpenCLIP are installed from self-hosted zip archives in the `archive/` directory. Do not change these URLs back to original upstream without understanding the reason for the fork (some original repos are deleted or archived).
