@@ -6,7 +6,10 @@ Guidance for agentic coding agents working in this repository (kojeomstudio fork
 
 A browser-based frontend for Stable Diffusion image generation. Python backend (Gradio + FastAPI), JavaScript frontend. Primary language: Python 3.10.
 
-This is a fork with modified dependency URLs pointing to `kojeomstudio/` GitHub repos (see `modules/launch_utils.py`). Some original upstream repos have been deleted or archived.
+- **Original upstream**: https://github.com/AUTOMATIC1111/stable-diffusion-webui
+- **This fork**: https://github.com/kojeomstudio/stable-diffusion-webui
+
+This fork has modified dependency URLs pointing to `kojeomstudio/` GitHub repos (see `modules/launch_utils.py`) because some original upstream dependency repos have been deleted or archived.
 
 ## Security — DO NOT
 
