@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SD WebUI Manager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <div class="header-left">
+                <h1>SD WebUI Manager</h1>
+                <span id="status-badge" class="badge badge-stopped">Stopped</span>
+            </div>
+            <div class="header-right">
+                <button id="btn-settings" class="btn btn-icon" title="Settings">&#9881;</button>
+            </div>
+        </header>
+
+        <section id="control-panel">
+            <div class="control-group">
+                <button id="btn-start" class="btn btn-primary">&#9654; Start</button>
+                <button id="btn-stop" class="btn btn-danger" disabled>&#9632; Stop</button>
+                <button id="btn-restart" class="btn btn-warning" disabled>&#8635; Restart</button>
+            </div>
+            <div class="info-group">
+                <div class="info-item">
+                    <span class="info-label">PID</span>
+                    <span id="info-pid" class="info-value">-</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">SD Server</span>
+                    <span id="info-health" class="info-value">-</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">API Port</span>
+                    <span id="info-api-port" class="info-value">9786</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="log-panel">
+            <div class="log-header">
+                <span>Console Output</span>
+                <div class="log-controls">
+                    <label>
+                        <input type="checkbox" id="log-autoscroll" checked> Auto-scroll
+                    </label>
+                    <button id="btn-clear-logs" class="btn btn-small">Clear</button>
+                </div>
+            </div>
+            <div id="log-output"></div>
+        </section>
+
+        <div id="settings-modal" class="modal hidden">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Settings</h2>
+                    <button id="btn-close-settings" class="btn btn-icon">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="setting-sd-path">SD WebUI Directory</label>
+                        <div class="input-row">
+                            <input type="text" id="setting-sd-path" placeholder="/path/to/stable-diffusion-webui">
+                            <button id="btn-detect-path" class="btn btn-small">Auto Detect</button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="setting-sd-port">SD Server Port</label>
+                        <input type="number" id="setting-sd-port" value="7860" min="1" max="65535">
+                    </div>
+                    <div class="form-group">
+                        <label for="setting-api-port">Management API Port</label>
+                        <input type="number" id="setting-api-port" value="9786" min="1" max="65535">
+                    </div>
+                    <div class="form-group">
+                        <label for="setting-args">Command Line Args</label>
+                        <input type="text" id="setting-args" placeholder="--api --skip-torch-cuda-test">
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="setting-auto-start"> Auto-start on launch
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="btn-save-settings" class="btn btn-primary">Save</button>
+                    <button id="btn-cancel-settings" class="btn">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -40,3 +40,5 @@ notification.mp3
 /cache
 trace.json
 /sysinfo-????-??-??-??-??.json
+/admin-tools/**/node_modules
+/admin-tools/**/target

@@ -8,6 +8,7 @@ module.exports = {
     parserOptions: {
         ecmaVersion: "latest",
     },
+    ignorePatterns: ["admin-tools/**"],
     rules: {
         "arrow-spacing": "error",
         "block-spacing": "error",
