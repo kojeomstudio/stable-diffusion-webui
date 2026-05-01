@@ -1,5 +1,13 @@
-const { invoke } = window.__TAURI__.core;
-const { listen } = window.__TAURI__.event;
+function getTauri() {
+    if (window.__TAURI__) {
+        return { invoke: window.__TAURI__.core.invoke, listen: window.__TAURI__.event.listen };
+    }
+    return null;
+}
+
+const tauri = getTauri();
+const invoke = tauri ? tauri.invoke : () => Promise.reject("Tauri runtime not available");
+const listen = tauri ? tauri.listen : (_event, _callback) => {};
 
 const elements = {
     statusBadge: document.getElementById("status-badge"),
@@ -27,6 +35,10 @@ const elements = {
 
 let currentStatus = "stopped";
 let healthCheckInterval = null;
+
+if (!tauri) {
+    appendLog("[Manager] Warning: Tauri runtime not available. Running in browser mode.");
+}
 
 function updateStatusUI(status) {
     currentStatus = status.split(":")[0];
